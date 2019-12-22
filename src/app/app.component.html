@@ -1,124 +1,30 @@
-
-<style>
-  :host {
-    font-family: -apple-system, BlinkMacSystemFont, 
-    "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 20px;
-    color: #333;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-
-  h6 {
-    margin: 10px 0;
-  }
-
-  p {
-    margin: 0;
-  }
-
-  .spacer {
-    flex: 1;
-    
-    background-image: url(assets/images/bg1.png);
-  }
-
-  .toolbar{
-    height: 65px;
-    margin: -8px;
-    display: flex;
-    align-items: center;
-    font-weight: 600;
-  }
-
-  .banner{
-    height: 250px;
-    margin: -8px;
-    display: flex;
-    text-align: center;
-    font-weight: 600;
-    
-    background-image: url(assets/images/bg1.png);
-  }
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
  
-  .toolbar img {
-    margin: 0 16px;
-    border-radius: 5rem;
-  }
- 
-  
-  
-  @media screen and (max-width: 575px) {
-    svg#rocket-smoke {
-      display: none;
-      visibility: hidden;
-    }
-  }
-</style>
-
-<!-- Toolbar -->
-<br>
-<div class="toolbar" role="banner">
-  
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- 
-  <h2 style="color:red; font-size:x-large;">Pambahinna</h2> &nbsp;
-  <h1 style="color: black; font-size:x-large;">Food Delivery</h1>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  
-   <div class="spacer">
-      <a href="#"><button class="btn btn-success">SignIn</button></a>
-    </div>
-  
-</div>
-<br><br>
-<div class="banner">
-  <br>
-<h2 style="color: black; margin-top: 175px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your favorite food, delivered with Pambahinna Food Delivery </h2>
-  
-</div> 
-<div class="banner">
-    <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Find Food">
-    </div>
-</div> 
-   <br><hr><br>
-
-<div class="banner" style="background-color: skyblue; height: 300px;">
-
-
-</div>
-<br><hr><br>
-
-<div class="banner">
-
-  <img src="assets/images/1.png" class="img-thumbnail" width="250px">
-  <img src="assets/images/2.png" class="img-thumbnail" width="250px">
-  <img src="assets/images/3.png" class="img-thumbnail" width="250px">
-  <img src="assets/images/4.png" class="img-thumbnail" width="250px">
-  
-</div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="about">About Pambahinna Food Delivery</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="cabin" >Add Your Food Cabin</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="deliver">Join to the deliver</a>
+      </li>
+      
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
 
 
 
-  
 
-  
+
 <router-outlet></router-outlet>
-
-
