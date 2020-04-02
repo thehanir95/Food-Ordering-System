@@ -1,0 +1,206 @@
+<style>
+  body{
+      
+      background-size: cover;
+      margin: 0; 
+      padding: 0;
+      background-position: center;
+      font-family: sans-serif;
+      color: bisque;
+  }
+  
+  .loginbox{
+      width: 450px;
+      height: 690px;
+      background:#000;
+      color:black;
+      top: 25%;
+      left: 50%;
+      bottom: 20%;
+      position: absolute;
+      transform: translate(-50%,5%);
+      box-sizing: border-box ;
+      padding: 70px 30px;
+  }
+  
+  h1{
+      margin-top: 0;
+      padding: 0 0 5px;
+      text-align: center;
+      font-size: 35px;
+  }
+  
+  .loginbox p{
+      margin: 0;
+      padding: 0;
+      font-weight: bold;
+  }
+  
+  .loginbox input{
+      width: 100%;
+      margin-bottom: 20px;
+  }
+  
+  .loginbox input[type="text"], input[type="password"]{
+      border: none;
+      border-bottom: 1px solid #fff;
+      background: transparent;
+      outline: none;
+      height: 40px;
+      color:black;
+      font-size: 25px;
+  }
+  
+  .loginbox a{
+      text-decoration: none;
+      font-size: 13px;
+      line-height: 20px;
+      color: black;
+      display: inline;
+  }
+
+  .loginbox a:hover{
+      color: black;
+  }
+
+  .button{
+      border: none;
+      outline: none;
+      height: 40px;
+      font-size: 18px;
+      border-radius: 20px;
+  }
+  
+  :host {
+    font-family: -apple-system, BlinkMacSystemFont, 
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 20px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h6 {
+    margin: 10px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .spacer {
+    flex: 1;
+    background-image: url(assets/images/bg1.png);
+  }
+
+  .toolbar{
+    height: 100px;
+    margin: -8px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+  }
+
+  .container{
+    margin-top: 0.25rem;
+  }
+
+  .banner{
+    height: 250px;
+    margin: -8px;
+    display: flex;
+    text-align: center;
+    font-weight: 600;
+    background-image: url(assets/images/bg1.png);
+  }
+ 
+  
+  .toolbar ul li{
+    display: inline;
+  }
+.navbar-nav{
+  align-content: center;
+  
+}
+
+/*footer*/
+
+
+@media screen and (max-width: 575px) {
+    svg#rocket-smoke {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+  
+  
+  </style>
+  
+<!--toolbar-->
+<div class="toolbar" role="banner" style="background-color: cadetblue;">
+    <h2 style="color:red; font-size:x-large; margin-left: 2rem;"><b>Pambahinna</b></h2> &nbsp;
+    <h1 style="color: black; font-size:x-large;"><b><i>Food Delivery</i> </b></h1>
+    
+   </div>
+ <!--//toolbar-->  
+
+   <body background="assets/images/bg5.png">
+    <div class="loginbox" style="background: url(assets/images/bg1.png);">
+      <h1>Customer Details</h1>
+      <form>
+          <p>Full Name</p>
+          <input type="text" name="">
+          <p>Address</p>
+          <input type="text" name="">
+          <p>Mobile No</p>
+          <input type="text" name="">
+          <p>Email</p>
+          <input type="text" name="">
+          <p>Password</p>
+          <input type="password" name=""><br>
+          <p>Confirm Password</p>
+          <input type="password" name=""><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <a routerLink="/after-adding-customer"> <button class="btn btn-success">Submit</button></a><br><br>
+     
+
+ 
+      </form>
+    </div>
+ 
+      
+ <!-- footer -->
+
+ <div class="toolbar" role="banner" style="background-color:black; height: 300px; margin-top: 1000px;">
+  <div class="row" style="height: 200px;">
+    
+  <h2 style="color:red; font-size:x-large; margin-left: 2rem;"><b>Pambahinna</b></h2> &nbsp;
+  <h1 style="color:yellow; font-size:x-large;"><b><i>Food Delivery</i> </b></h1>
+   
+  <ul style="display: grid;">
+    <li><a routerLink="/about">About Us</a></li>
+    <li><a routerLink="/cabin">Add Food Cabin</a></li>
+    <li><a routerLink="/deliver">Add Deliver</a></li>
+    <li><a routerLink="/customer">Add Customer</a></li>
+  </ul>
+
+  <ul style="display: grid;">
+    <li><a routerLink="/signin">SignIn/Register</a></li>
+    <li><a href="#">Privacy</a></li>
+  </ul>
+
+
+ </div>
+</div>
+
+ <!--// footer-->
+
+ 
+ 
+ </body>
+
+
+

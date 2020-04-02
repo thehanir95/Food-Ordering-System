@@ -1,0 +1,117 @@
+
+<style>
+  :host {
+    font-family: -apple-system, BlinkMacSystemFont, 
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 20px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h6 {
+    margin: 10px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .spacer {
+    flex: 1;
+    background-image: url(assets/images/bg1.png);
+  }
+
+  .toolbar{
+    height: 100px;
+    margin: -8px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+  }
+
+  .container{
+    margin-top: 0.25rem;
+  }
+
+  .banner{
+    height: 250px;
+    margin: -8px;
+    display: flex;
+    text-align: center;
+    font-weight: 600;
+    background-image: url(assets/images/bg1.png);
+  }
+ 
+  
+  .toolbar ul li{
+    display: inline;
+  }
+.navbar-nav{
+  align-content: center;
+  
+}
+
+/*footer*/
+.footer-main-div{
+  width: 100%;
+  height: auto;
+  margin: auto;
+  background:rosybrown;
+  padding: 20px 0px;
+}
+
+.footer-social-icons{
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+.footer-social-icons ul{
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+
+
+  @media screen and (max-width: 575px) {
+    svg#rocket-smoke {
+      display: none;
+      visibility: hidden;
+    }
+  }
+</style>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+   
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/cabin">Add Your Food Cabin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/deliver">Add as the deliver</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/customer">Order Now</a>
+        </li>
+      </ul>
+
+      
+    </div>
+  </nav>
+
+  
+</body>
+
+
+ 
+<router-outlet></router-outlet>
