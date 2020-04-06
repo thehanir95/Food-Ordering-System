@@ -19,6 +19,7 @@ import { AfterAddingDeliverComponent } from './after-adding-deliver/after-adding
 import { AfterValidCabinComponent } from './after-valid-cabin/after-valid-cabin.component';
 import { AfterValidCustomerComponent } from './after-valid-customer/after-valid-customer.component';
 import { AfterValidDeliverComponent } from './after-valid-deliver/after-valid-deliver.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,8 @@ import { AfterValidDeliverComponent } from './after-valid-deliver/after-valid-de
   imports: [
     BrowserModule,
     AppRoutingModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
