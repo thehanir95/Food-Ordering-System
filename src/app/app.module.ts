@@ -21,6 +21,7 @@ import { AfterValidCustomerComponent } from './after-valid-customer/after-valid-
 import { AfterValidDeliverComponent } from './after-valid-deliver/after-valid-deliver.component';
 import { RouterModule } from '@angular/router';
 
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,9 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
 
 
   ],

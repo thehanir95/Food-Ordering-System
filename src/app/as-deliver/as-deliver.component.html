@@ -14,23 +14,23 @@
     <div class="loginbox">
       <h1>Deliver Details</h1>
       <form>
-          <p>Full Name</p>
-          <input type="text" name="">
-          <p>Address</p>
-          <input type="text" name="">
-          <p>Mobile No</p>
-          <input type="text" name="">
-          <p>Email</p>
-          <input type="text" name="">
-          <p>Food Cabin Code</p>
-          <input type="text" name="">
-          <p>Password</p>
-          <input type="password" name=""><br>
-          <p>Confirm Password</p>
-          <input type="password" name=""><br>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         <a routerLink="/after-adding-deliver"> <button class="btn btn-success">Submit</button></a><br><br>
+        <p>Full Name</p>
+        <input type="text" [formControl]="fullname" name="">
+        <p>Address</p>
+        <input type="text" [formControl]="address" name="">
+        <p>Mobile No</p>
+        <input type="text" [formControl]="mobileno" name="">
+        <p>Email</p>
+        <input type="text" [formControl]="email" name="">
+        <p>Food Cabin Code</p>
+        <input type="text" [formControl]="foodcabincode" name="">
+        <p>Password</p>
+        <input type="password" [formControl]="password" name=""><br>
+        <p>Confirm Password</p>
+        <input type="password" [formControl]="confirmpassword" name=""><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <a routerLink="/after-adding-deliver"> <button (click)="submit()" class="btn btn-success">Submit</button></a><br><br>
      
 
  

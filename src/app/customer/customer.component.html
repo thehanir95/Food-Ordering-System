@@ -15,20 +15,20 @@
       <h1>Customer Details</h1>
       <form>
           <p>Full Name</p>
-          <input type="text" name="">
+          <input type="text" [formControl]="fullname" name="">
           <p>Address</p>
-          <input type="text" name="">
+          <input type="text" [formControl]="address" name="">
           <p>Mobile No</p>
-          <input type="text" name="">
+          <input type="text" [formControl]="mobileno" name="">
           <p>Email</p>
-          <input type="text" name="">
+          <input type="text" [formControl]="email" name="">
           <p>Password</p>
-          <input type="password" name=""><br>
+          <input type="password" [formControl]="password" name=""><br>
           <p>Confirm Password</p>
-          <input type="password" name=""><br>
+          <input type="password" [formControl]="confirmpassword" name=""><br>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         <a routerLink="/after-adding-customer"> <button class="btn btn-success">Submit</button></a><br><br>
+         <a routerLink="/after-adding-customer"> <button (click)="submit()"  class="btn btn-success">Submit</button></a><br><br>
      
 
  
