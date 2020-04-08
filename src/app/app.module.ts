@@ -22,6 +22,12 @@ import { AfterValidDeliverComponent } from './after-valid-deliver/after-valid-de
 import { RouterModule } from '@angular/router';
 
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatSliderModule } from '@angular/material/slider';
+import { MatButtonModule } from '@angular/material/button';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +52,11 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+
+    MatSliderModule,
+    MatButtonModule
 
 
   ],
