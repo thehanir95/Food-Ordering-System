@@ -8,7 +8,32 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+ 
+
+mat-toolbar{
+  height: 100px;
+  margin: -8px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+
+  .example-button-row button,
+  .example-button-row a {
+    margin-right: 8px;
+  }
+
+  .example-icon {
+    padding: 0 14px;
+  }
   
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  
+
+
   h6 {
     margin: 10px 0;
   }
