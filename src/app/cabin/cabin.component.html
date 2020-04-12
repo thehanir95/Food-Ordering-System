@@ -8,18 +8,23 @@
       <form>
           <p>Food Cabin Name</p>
           <input type="text" [formControl]="foodcabinname" name="">
+
           <p>Owner Name</p>
           <input type="text" [formControl]="ownername" name="">
+
           <p>Mobile No</p>
           <input type="text" [formControl]="mobileno" name="">
-          <p>Email</p>
-          <input type="text" [formControl]="email" name="">
+
           <p>Address</p>
-          <input type="text" [formControl]="address" name="">
+          <input type="text" [formControl]="email" name="">
+
+
           <p>Password</p>
           <input type="password" [formControl]="password" name=""><br>
+
           <p>Confirm Password</p>
           <input type="password" [formControl]="confirmpassword" name=""><br>
+          
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
          <a routerLink="/after-adding-cabin"> <button (click)="submit()" class="btn btn-success">Submit</button></a><br><br>
