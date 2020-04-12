@@ -9,6 +9,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 h6 {
   margin: 10px 0;
 }
@@ -17,9 +18,9 @@ p {
   margin: 0;
 }
 
+
 .toolbar{
   height: 100px;
-  margin: -8px;
   display: flex;
   align-items: center;
   font-weight: 600;
@@ -32,9 +33,30 @@ p {
 .toolbar ul li{
   display: inline;
 }
-.navbar-nav{
+.navbar navbar-expand-lg navbar-light bg-light{
 align-content: center;
 
+}
+
+/*footer*/
+.footer-main-div{
+width: 100%;
+height: auto;
+margin: auto;
+background:rosybrown;
+padding: 20px 0px;
+}
+
+.footer-social-icons{
+width: 100%;
+height: auto;
+margin: auto;
+}
+
+.footer-social-icons ul{
+margin: 0px;
+padding: 0px;
+text-align: center;
 }
 
 

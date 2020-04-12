@@ -48,6 +48,9 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTreeModule} from '@angular/material/tree';
 
+import {MatIconModule} from '@angular/material/icon'; 
+
+
 
 
 
@@ -101,7 +104,8 @@ import { from } from 'rxjs';
     MatListModule,
     MatStepperModule,
     MatTabsModule,
-    MatTreeModule
+    MatTreeModule,
+    MatIconModule
     
   ],
   providers: [],
