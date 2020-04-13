@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl , Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-as-cabin',
@@ -7,10 +7,14 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./as-cabin.component.scss']
 })
 export class AsCabinComponent implements OnInit {
+
+  hide = true;
+  email = new FormControl('', [Validators.required, Validators.email]);
+
+
   foodcabinname=new FormControl();
   ownername=new FormControl();
   mobileno=new FormControl();
-  email=new FormControl();
   address=new FormControl();
   password=new FormControl();
   confirmpassword=new FormControl();
@@ -30,6 +34,16 @@ export class AsCabinComponent implements OnInit {
     alert(this.confirmpassword.value);
     
   }
+ 
+  getErrorMessage() {
+    if (this.email.hasError('required'))
+    {
+      return 'You must enter a value';
+    }
+
+    return this.email.hasError('email') ? 'Not a valid email' : '';
+  }
+
 
 
 }

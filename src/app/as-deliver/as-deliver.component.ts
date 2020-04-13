@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl , Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-as-deliver',
@@ -7,10 +7,13 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./as-deliver.component.scss']
 })
 export class AsDeliverComponent implements OnInit {
+  hide = true;
+  email = new FormControl('', [Validators.required, Validators.email]);
+
+
   fullname=new FormControl();
   address=new FormControl();
   mobileno=new FormControl();
-  email=new FormControl();
   foodcabincode=new FormControl();
   password=new FormControl();
   confirmpassword=new FormControl();
@@ -30,5 +33,16 @@ export class AsDeliverComponent implements OnInit {
     alert(this.password.value);
     alert(this.confirmpassword.value);
   }
+
+
+  getErrorMessage() {
+    if (this.email.hasError('required'))
+    {
+      return 'You must enter a value';
+    }
+
+    return this.email.hasError('email') ? 'Not a valid email' : '';
+  }
+
 
 }

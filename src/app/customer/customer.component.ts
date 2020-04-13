@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl , Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-customer',
@@ -7,10 +7,13 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./customer.component.scss']
 })
 export class CustomerComponent implements OnInit {
+  hide = true;
+  email = new FormControl('', [Validators.required, Validators.email]);
+
+
   fullname=new FormControl();
   address=new FormControl();
   mobileno=new FormControl();
-  email=new FormControl();
   password=new FormControl();
   confirmpassword=new FormControl();
 
@@ -28,4 +31,14 @@ export class CustomerComponent implements OnInit {
     alert(this.confirmpassword.value);
     
   }
+  
+  getErrorMessage() {
+    if (this.email.hasError('required'))
+    {
+      return 'You must enter a value';
+    }
+
+    return this.email.hasError('email') ? 'Not a valid email' : '';
+  }
+
 }

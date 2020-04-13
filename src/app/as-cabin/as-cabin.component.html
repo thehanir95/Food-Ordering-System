@@ -3,29 +3,81 @@
 </body>
 
    <body style="background-image: url(assets/images/3.gif); height: 1000px;background-size: cover;">
-    <div class="loginbox">
-      <h1>Food Cabin Details</h1>
-      <form>
-        <p>Food Cabin Name</p>
-        <input type="text" [formControl]="foodcabinname" name="">
-        <p>Owner Name</p>
-        <input type="text" [formControl]="ownername" name="">
-        <p>Mobile No</p>
-        <input type="text" [formControl]="mobileno" name="">
-        <p>Email</p>
-        <input type="text" [formControl]="email" name="">
-        <p>Address</p>
-        <input type="text" [formControl]="address" name="">
-        <p>Password</p>
-        <input type="password" [formControl]="password" name=""><br>
-        <p>Confirm Password</p>
-        <input type="password" [formControl]="confirmpassword" name=""><br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       <a routerLink="/after-adding-cabin"> <button (click)="submit()" class="btn btn-success">Submit</button></a><br><br>
-     
-      </form>
+    
+<!--add food cabin -->
+    <div class="container">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col">
+          <b><h2 style="text-align: center;font-style: italic;">Food Cabin Details</h2></b>
+          <div class="example-container">
+            <mat-form-field>
+               <mat-label>Name</mat-label>
+               <input matInput>
+               </mat-form-field>
+           </div>
+            
+           <div class="example-container">
+            <mat-form-field>
+               <mat-label>Owner Name</mat-label>
+               <input matInput>
+               </mat-form-field>
+           </div>
+        
+           <div class="example-container"> 
+          <mat-form-field>
+            <mat-label>Telephone</mat-label>
+            <span matPrefix>+94 &nbsp;</span>
+            <input type="tel" matInput placeholder="710-000-000">
+            <mat-icon matSuffix>mode_edit</mat-icon>
+          </mat-form-field>
+         
+          </div>
+        
+           <div class="example-container">
+            <mat-form-field>
+               <mat-label>Address</mat-label>
+               <input matInput>
+               </mat-form-field>
+           </div>
+            
+            <div class="example-container">  
+              <mat-form-field>
+                  <mat-label>Enter your email</mat-label>
+                  <input matInput placeholder="pat@example.com" [formControl]="email" required>
+                  <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+              </mat-form-field>
+            </div>
+        
+            <div class="example-container">
+                <mat-form-field>
+                  <mat-label>Enter your password</mat-label>
+                  <input matInput [type]="hide ? 'password' : 'text'">
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                </mat-form-field>
+            </div>
+            
+              <div class="example-container">
+                <mat-form-field>
+                  <mat-label>Reenter your password</mat-label>
+                  <input matInput [type]="hide ? 'password' : 'text'">
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                </mat-form-field>
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a routerLink="/after-adding-cabin"> <button (click)="submit()" class="btn btn-success">Submit</button></a><br><br>
+        </div>
+        <div class="col"></div>
+                  
     </div>
+    </div>
+<!-- /add food cabin -->
+
   </body>
       
  <!-- footer -->
