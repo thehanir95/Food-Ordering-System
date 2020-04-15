@@ -1,4 +1,4 @@
-<body style="background-image: url(assets/images/22.gif); height: 50px;">
+<body style="background-image: url(assets/images/22.gif); height: 50px;background-color: black;">
 
 </body>
 
@@ -66,11 +66,13 @@
                   <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                   <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                   </button>
-                </mat-form-field>
+                </mat-form-field><br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a routerLink="/after-adding-cabin"><button  (click)="submit()"  mat-raised-button color="primary" >Submit</button></a>
+                
             </div>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a routerLink="/after-adding-cabin"> <button (click)="submit()" class="btn btn-success">Submit</button></a><br><br>
+          
         </div>
         <div class="col"></div>
                   
