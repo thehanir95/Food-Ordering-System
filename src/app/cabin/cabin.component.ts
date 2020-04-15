@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl,Validators } from '@angular/forms';
+import { FormControl,Validators , FormBuilder, FormGroup,} from '@angular/forms';
 
 @Component({
   selector: 'app-cabin',
@@ -9,11 +9,54 @@ import { FormControl,Validators } from '@angular/forms';
 export class CabinComponent implements OnInit {
   hide = true;
   email = new FormControl('', [Validators.required, Validators.email]);
+  
+  /*
+  isLinear = false;
 
-  constructor() { }
+  
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+  thirdFormGroup: FormGroup;
+  forthFormGroup: FormGroup;
+  fifthFormGroup: FormGroup;
+  sixthFormGroup: FormGroup;
+  seventhFormGroup: FormGroup;
+*/
+
+  constructor( /*private _formBuilder: FormBuilder */) { }
 
 
-  ngOnInit() {
+  ngOnInit() { /*
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
+
+    
+    this.thirdFormGroup = this._formBuilder.group({
+      thirdCtrl: ['', Validators.required]
+    });
+
+    this.forthFormGroup = this._formBuilder.group({
+      forthCtrl: ['', Validators.required]
+    });
+
+    this.fifthFormGroup = this._formBuilder.group({
+      fifthCtrl: ['', Validators.required]
+    });
+
+    this.sixthFormGroup = this._formBuilder.group({
+      sixthCtrl: ['', Validators.required]
+    });
+
+    this.seventhFormGroup = this._formBuilder.group({
+      seventhCtrl: ['', Validators.required]
+    });
+*/
+
   }
 
   foodcabinname=new FormControl();
