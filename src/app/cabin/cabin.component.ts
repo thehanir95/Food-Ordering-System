@@ -10,8 +10,8 @@ export class CabinComponent implements OnInit {
   hide = true;
   email = new FormControl('', [Validators.required, Validators.email]);
   
-  /*
-  isLinear = false;
+  
+  isLinear = true;
 
   
   firstFormGroup: FormGroup;
@@ -21,12 +21,12 @@ export class CabinComponent implements OnInit {
   fifthFormGroup: FormGroup;
   sixthFormGroup: FormGroup;
   seventhFormGroup: FormGroup;
-*/
-
-  constructor( /*private _formBuilder: FormBuilder */) { }
 
 
-  ngOnInit() { /*
+  constructor( private _formBuilder: FormBuilder ) { }
+
+
+  ngOnInit() { 
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
     });
@@ -55,7 +55,7 @@ export class CabinComponent implements OnInit {
     this.seventhFormGroup = this._formBuilder.group({
       seventhCtrl: ['', Validators.required]
     });
-*/
+
 
   }
 

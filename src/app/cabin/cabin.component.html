@@ -3,168 +3,175 @@
 
 </body>
 
-   <body style=" background-image: url(assets/images/3.gif); height: 1000px;background-size: cover;">
+   <body style="background-image: url(assets/images/3.gif); height: 1000px;background-size: cover;">
   
-    <!--food cabin
+    <!--food cabin -->
 <br><br><br><br><br><br><br>
-<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
-    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-  </button>
 
-  <mat-horizontal-stepper [linear]="isLinear" #stepper>
+<div class="container">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col">
 
-    <mat-step [stepControl]="firstFormGroup">
+      <mat-horizontal-stepper [linear]="isLinear" #stepper>
 
-      <form [formGroup]="firstFormGroup">
-        <ng-template matStepLabel>Fill food cabin name</ng-template>
-
-        <mat-form-field>
-          <mat-label>Food Cabin Name</mat-label>
-          <input matInput  formControlName="firstCtrl" required>
-        </mat-form-field>
-
-        <div>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-
-      </form>
-
-    </mat-step>
-
-    <mat-step [stepControl]="secondFormGroup">
-
-      <form [formGroup]="secondFormGroup">
-
-        <ng-template matStepLabel>Fill Owner Name</ng-template>
-
-        <mat-form-field>
-          <mat-label>Owner Name</mat-label>
-          <input matInput placeholder="Last name, First name" formControlName="secondCtrl" required>
-        </mat-form-field>
-
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-
-      </form>
-    </mat-step>
-
-    <mat-step [stepControl]="thirdFormGroup">
-
-        <form [formGroup]="thirdFormGroup">
-  
-          <ng-template matStepLabel>Fill out your mobile no</ng-template>
-  
-          <mat-form-field>
-            <mat-label>Telephone</mat-label>
-            <span matPrefix>+94 &nbsp;</span>
-            <input type="tel" matInput placeholder="710-000-000" formControlName="thirdCtrl" required>
-            <mat-icon matSuffix>mode_edit</mat-icon>
-          </mat-form-field>
-         
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
-          </div>
-  
-        </form>
-      </mat-step>
-
-      <mat-step [stepControl]="forthFormGroup">
-        <form [formGroup]="forthFormGroup">
-          <ng-template matStepLabel>Fill your address</ng-template>
-          <mat-form-field>
-            <mat-label>Address</mat-label>
-            <input matInput formControlName="forthCtrl" placeholder="Ex. 1 Main St, New York, NY"
-                   required>
-          </mat-form-field>
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
-          </div>
-        </form>
-      </mat-step>
-
-    <mat-step [stepControl]="fifththFormGroup">
-
-        <form [formGroup]="fifthFormGroup">
-  
-          <ng-template matStepLabel>Fill your Email</ng-template>
-  
-          <mat-form-field>
-            <mat-label>Enter your email</mat-label>
-            <input matInput placeholder="pat@example.com" [formControl]="email" formControlName="fifthCtrl" required>
-            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-        </mat-form-field>
-
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
-          </div>
-  
-        </form>
-      </mat-step>
-
-      <mat-step [stepControl]="sixththFormGroup">
-
-        <form [formGroup]="sixthFormGroup">
-  
-          <ng-template matStepLabel>Enter Password</ng-template>
-
-          <mat-form-field>
-            <mat-label>Enter your password</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'"formControlName="fifthCtrl" required>
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-          </mat-form-field>
-
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
-          </div>
-  
-        </form>
-      </mat-step>
-
+        <mat-step [stepControl]="firstFormGroup">
+    
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Fill food cabin name</ng-template>
+    
+            <mat-form-field>
+              <mat-label>Food Cabin Name</mat-label>
+              <input matInput  formControlName="firstCtrl" required>
+            </mat-form-field>
+    
+            <div>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+    
+          </form>
+    
+        </mat-step>
+    
+        <mat-step [stepControl]="secondFormGroup">
+    
+          <form [formGroup]="secondFormGroup">
+    
+            <ng-template matStepLabel>Fill Owner Name</ng-template>
+    
+            <mat-form-field>
+              <mat-label>Owner Name</mat-label>
+              <input matInput placeholder="Last name, First name" formControlName="secondCtrl" required>
+            </mat-form-field>
+    
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+    
+          </form>
+        </mat-step>
+    
+        <mat-step [stepControl]="thirdFormGroup">
+    
+            <form [formGroup]="thirdFormGroup">
       
-      <mat-step [stepControl]="seventhFormGroup">
-
-        <form [formGroup]="seventhFormGroup">
-  
-          <ng-template matStepLabel>Re-Enter Password</ng-template>
-
-          <mat-form-field>
-            <mat-label>Re-Enter your password</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'" formControlName="seventhCtrl" required>
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-          </mat-form-field>
-
+              <ng-template matStepLabel>Fill out your mobile no</ng-template>
+      
+              <mat-form-field>
+                <mat-label>Telephone</mat-label>
+                <span matPrefix>+94 &nbsp;</span>
+                <input type="tel" matInput placeholder="710-000-000" formControlName="thirdCtrl" required>
+                <mat-icon matSuffix>mode_edit</mat-icon>
+              </mat-form-field>
+             
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+      
+            </form>
+          </mat-step>
+    
+          <mat-step [stepControl]="forthFormGroup">
+            <form [formGroup]="forthFormGroup">
+              <ng-template matStepLabel>Fill your address</ng-template>
+              <mat-form-field>
+                <mat-label>Address</mat-label>
+                <input matInput formControlName="forthCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                       required>
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+    
+        <mat-step [stepControl]="fifththFormGroup">
+    
+            <form [formGroup]="fifthFormGroup">
+      
+              <ng-template matStepLabel>Fill your Email</ng-template>
+      
+              <mat-form-field>
+                <mat-label>Enter your email</mat-label>
+                <input matInput placeholder="pat@example.com" [formControl]="email" formControlName="fifthCtrl" required>
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+    
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+      
+            </form>
+          </mat-step>
+    
+          <mat-step [stepControl]="sixththFormGroup">
+    
+            <form [formGroup]="sixthFormGroup">
+      
+              <ng-template matStepLabel>Enter Password</ng-template>
+    
+              <mat-form-field>
+                <mat-label>Enter your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'"formControlName="fifthCtrl" required>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+    
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+      
+            </form>
+          </mat-step>
+    
+          
+          <mat-step [stepControl]="seventhFormGroup">
+    
+            <form [formGroup]="seventhFormGroup">
+      
+              <ng-template matStepLabel>Re-Enter Password</ng-template>
+    
+              <mat-form-field>
+                <mat-label>Re-Enter your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" formControlName="seventhCtrl" required>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+    
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+      
+            </form>
+          </mat-step>
+    
+        <mat-step>
+          <ng-template matStepLabel>Done</ng-template>
+          <p>You are now done.</p>
           <div>
             <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
           </div>
+        </mat-step>
+    
+      </mat-horizontal-stepper>
+    
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
   
-        </form>
-      </mat-step>
+ <!-- //food cabin -->
 
-    <mat-step>
-      <ng-template matStepLabel>Done</ng-template>
-      <p>You are now done.</p>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
-      </div>
-    </mat-step>
-
-  </mat-horizontal-stepper>
-  
-  //food cabin -->
-
-   <!--add food cabin -->
+   <!--add food cabin 
 
     <div class="container">
       <div class="row">
@@ -240,7 +247,7 @@
     </div>
     </div>
 
-    <!-- //add food cabin -->
+    //add food cabin -->
 
   </body>
       
