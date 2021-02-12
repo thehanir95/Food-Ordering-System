@@ -1,0 +1,247 @@
+<?php
+session_start();
+include("../connection.php");
+extract($_REQUEST);
+if(isset($_GET['product']))
+{
+	$product_id= $_GET['product'];
+}
+else
+{
+	$product_id= "";
+}
+if(isset($_GET['msg']))
+{
+	$loginmsg=$_GET['msg'];
+}
+else
+{
+	$loginmsg="";
+}
+if(isset($login))
+{
+	$query=mysqli_query($con,"select * from tblcustomer where fld_email='$email' && password='$password'");
+    if($row=mysqli_fetch_array($query))
+	{
+		$customer_email =$row['fld_email'];
+		$_SESSION['cust_id']=$customer_email;
+		if(!empty($customer_email && $product_id))
+		{
+			 //$_SESSION['product']=$product_id;
+			echo $_SESSION['cust_id']=$customer_email;
+			
+			 header("location:cart.php?product=$product_id");
+			
+		}
+		else
+		{
+		header("location:../index.php");
+		 $_SESSION['product']=$product_id;
+		 $_SESSION['cust_id'];
+		}
+		 
+	}
+	else
+	{
+		$ermsg="invalid Details";
+	}
+}
+
+if(isset($register))
+{
+	$query=mysqli_query($con,"select * from tblcustomer where fld_email='$email'");
+	$row=mysqli_num_rows($query);
+	if($row)
+	{
+		$ermsg2="Email alredy registered with us";
+		
+	}
+	else
+	{
+		if(mysqli_query($con,"insert into tblcustomer (fld_name,fld_email,password,fld_mobile,address) values('$name','$email','$password','$mobile', '$address')"))
+    {
+		$_SESSION['cust_id']=$email;
+		if(!empty($customer_email && $product_id))
+		{
+			$_SESSION['cust_id']=$customer_email;
+			header("location:cart.php?product='$product_id'");
+			
+		}
+		else
+		{
+			$_SESSION['cust_id']=$email;
+			header("location:../index.php");
+		}
+		
+		
+	}
+	else
+	{
+		echo "fail";
+		echo $name;
+		echo $email;
+		echo $password;
+		echo $mobile;
+		echo $address;
+	}
+	}
+	
+}
+ 
+?>
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+    <title>Login</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+		
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	   <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Permanent+Marker" rel="stylesheet"> -->
+
+		<style>
+
+		ul li{list-style:none;}
+		ul li a {color:black;font-weight:bold;text-decoration:none; }
+		ul li a:hover {color:green;text-decoration:none;}
+		</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  
+    <a class="navbar-brand" href="../index.php"><span style="color:green;font-family: 'Permanent Marker', cursive;">Pambahinna Food Delivery</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+	
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="../index.php">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../aboutus.php">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../services.php">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="foods.php">Foods</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../contact.php">Contact</a>
+        </li>
+		<li class="nav-item">
+		  <form method="post">
+          <?php
+			if(empty($cust_id))
+			{
+			?>
+			<a href="index.php?msg=you must be login first"><span style="color:black; font-size:30px;"><i class="fa fa-shopping-cart" aria-hidden="true"><span style="color:red;" id="cart"  class="badge badge-light">0</span></i></span></a>
+			
+			&nbsp;&nbsp;&nbsp;
+			<button class="btn btn-outline-success my-2 my-sm-0" name="login" type="submit">Log In</button>&nbsp;&nbsp;&nbsp;
+            <?php
+			}
+			else
+			{
+			?>
+			<a href="form/cart.php"><span style=" color:green; font-size:30px;"><i class="fa fa-shopping-cart" aria-hidden="true"><span style="color:green;" id="cart"  class="badge badge-light"><?php if(isset($re)) { echo $re; }?></span></i></span></a>
+			<button class="btn btn-outline-success my-2 my-sm-0" name="logout" type="submit">Log Out</button>&nbsp;&nbsp;&nbsp;
+			<?php
+			}
+			?>
+			</form>
+        </li>
+      </ul>
+    </div>
+</nav>
+
+<br><br><br><br><br><br>
+
+<div class="middle" style=" margin:0px auto;width:500px;">
+       <ul class="nav nav-tabs nabbar_inverse" id="myTab" style="background:green;border-radius:10px 10px 10px 10px;" role="tablist">
+          <li class="nav-item">
+             <a class="nav-link active" style="color:black;" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Login</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" id="signup-tab" style="color:black;" data-toggle="tab" href="#signup" role="tab" aria-controls="signup" aria-selected="false">Create New Account</a>
+          </li>
+       </ul>
+
+	   <br><br>
+
+	   <div class="tab-content" id="myTabContent">
+	   <!--login Section-- starts-->
+            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="home-tab">
+			    <div class="footer" style="color:red;"><?php if(isset($loginmsg)){ echo $loginmsg;}?></div>
+			  <form method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                      <label for="email">Email address:</label>
+                      <input type="email" class="form-control" name="email" id="email" placeholder="Email address" required/>
+                    </div>
+                   <div class="form-group">
+                      <label for="pwd">Password:</label>
+                     <input type="password" name="password" class="form-control" id="pwd" placeholder="password" required/>
+                   </div>
+					<center>
+					<button type="submit" name="login"class="btn btn-success">Login</button>
+					</center>
+                  <div class="footer" style="color:red;"><?php if(isset($ermsg)) { echo $ermsg; }?><?php if(isset($ermsg2)) { echo $ermsg2; }?></div>
+			 </form>
+			</div>
+			<!--login Section-- ends-->
+			
+			<!--new account Section-- starts-->
+            <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="profile-tab">
+			    <form method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                      <label for="name">Name :</label>
+                      <input type="text" id="name"  class="form-control" name="name" placeholder="Name" required="required"/>
+                    </div>
+					
+					<div class="form-group">
+                      <label for="email">Email :</label>
+                      <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email" required/>
+                    </div>
+					
+                   <div class="form-group">
+                      <label for="pwd">Password :</label>
+                     <input type="password" name="password" class="form-control" id="pwd" placeholder="Enter password" required/>
+                   </div>
+				   
+				   <div class="form-group">
+                      <label for="mobile">Mobile :</label>
+                      <input type="tel" id="mobile" class="form-control" name="mobile" pattern="[6-9]{1}[0-9]{2}[0-9]{3}[0-9]{4}" placeholder="Mobile No" required>
+                    </div>
+					
+					<div class="form-group">
+                          <label for="add">Address :</label>
+                          <input type="text" class="form-control" id="add" placeholder="Enter Address" value="<?php if(isset($address)) { echo $address;}?>" name="address" required>
+                     </div>
+					<center>
+					<button type="submit" name="register" style="border:1px solid;" class="btn btn-success">Create New Account</button>
+					</center>
+                  <div class="footer" style="color:red;"><?php if(isset($ermsg)) { echo $ermsg; }?><?php if(isset($ermsg2)) { echo $ermsg2; }?></div>
+			 </form>
+			</div>
+
+			
+      </div>
+	  </div>
+
+	  <br><br> <br><br> <br><br><br> <br><br><br> <br><br>
+	  <!--footer -->
+<?php
+include("./footer.php");
+?>	   
+</body>
+</html>
+ 
